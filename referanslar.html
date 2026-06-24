@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akçaylar OGSB - Referanslar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1>🏢 Akçaylar OGSB</h1>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="kurumsal.html">Kurumsal</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="referanslar.html" class="active">Referanslar</a></li>
+                <li><a href="isg-rehberi.html">İSG Rehberi</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="page-section">
+            <h2>Referanslar</h2>
+            <p>Tamamladığımız başarılı projeler ve hizmetler</p>
+            <div class="references-list" id="references"></div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Akçaylar OGSB. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        const references = [
+            {title: 'Peyzaj Düzenlemesi Projesi', year: 2022, description: 'Tüm bahçe alanlarının modernleştirilmesi'},
+            {title: 'Güvenlik Sistemi Yükseltme', year: 2021, description: 'Kamera ve erişim kontrol sistemi kurulumu'},
+            {title: 'Su Hattı Renovasyonu', year: 2020, description: 'Eski su hatlarının tamamen yenilenmesi'},
+            {title: 'Elektrik Altyapısı Güncelleme', year: 2019, description: 'Elektrik sistemi modernizasyonu'},
+            {title: 'Yol ve Kaldırım Onarımı', year: 2023, description: 'Yaşlı ve çocuklara uyumlu yol tasarımı'},
+            {title: 'Sosyal Tesis İnşaası', year: 2018, description: 'Yeni yaşlı bakım merkezi açılması'},
+        ];
+
+        const container = document.getElementById('references');
+        references.forEach(ref => {
+            const div = document.createElement('div');
+            div.className = 'reference-card';
+            div.innerHTML = `<h3>${ref.title}</h3><p class="year">📅 ${ref.year}</p><p>${ref.description}</p>`;
+            container.appendChild(div);
+        });
+    </script>
+</body>
+</html>
