@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akçaylar OGSB - Ana Sayfa</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1>🏢 Akçaylar OGSB</h1>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="index.html" class="active">Ana Sayfa</a></li>
+                <li><a href="kurumsal.html">Kurumsal</a></li>
+                <li><a href="galeri.html">Galeri</a></li>
+                <li><a href="referanslar.html">Referanslar</a></li>
+                <li><a href="isg-rehberi.html">İSG Rehberi</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Akçaylar Yazlık Sitesi Yönetimi</h2>
+            <p>Profesyonel hizmetler, güvenli ortam, kaliteli yaşam</p>
+            <a href="kurumsal.html" class="btn btn-primary">Hakkımızda Bilgi Al</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="home-section">
+            <h3>Hoş Geldiniz</h3>
+            <p>Akçaylar Yazlık Sitesi, modern yaşam standartları ve güvenlik ile birleşen bir yaşam alanıdır.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏠</div>
+                    <h4>Modern Tesisler</h4>
+                    <p>Son teknoloji ile donatılmış yaşam alanları</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h4>Güvenlik</h4>
+                    <p>24/7 güvenlik hizmetleri ve izleme sistemi</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h4>Topluluk</h4>
+                    <p>Sosyal etkinlikler ve komşuluk dayanışması</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h4>İSG Rehberi</h4>
+                    <p>İş Sağlığı ve Güvenliği bilgileri</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Akçaylar OGSB. Tüm hakları saklıdır.</p>
+            <p>İletişim: info@akcaylarogsb.com | Tel: +90 (XXX) XXX XX XX</p>
+        </div>
+    </footer>
+
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        const adminPassword = "admin123";
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'a' && e.ctrlKey && e.shiftKey) {
+                e.preventDefault();
+                const modal = document.createElement('div');
+                modal.id = 'adminModal';
+                modal.className = 'modal';
+                modal.style.display = 'flex';
+                modal.innerHTML = `
+                    <div class="modal-content admin-modal">
+                        <span class="close">&times;</span>
+                        <h2>Admin Paneli Giriş</h2>
+                        <form id="adminLoginForm">
+                            <div class="form-group">
+                                <label for="adminPassword">Şifre:</label>
+                                <input type="password" id="adminPassword" required autofocus>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Giriş Yap</button>
+                        </form>
+                        <p class="error-message" id="adminError"></p>
+                    </div>
+                `;
+                document.body.appendChild(modal);
+
+                document.querySelector('.close').addEventListener('click', function() {
+                    modal.remove();
+                });
+
+                document.getElementById('adminLoginForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const password = document.getElementById('adminPassword').value;
+                    
+                    if (password === adminPassword) {
+                        window.location.href = 'admin/admin.html';
+                    } else {
+                        document.getElementById('adminError').textContent = 'Hatalı şifre!';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
